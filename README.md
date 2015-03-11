@@ -15,7 +15,7 @@ Usage of ./xtract:
 
 Examples:
 
-```
+``` bash
 # find all ipv4 addresses from the log
 cat auth.log | xtract -f ipv4 -uniq
 
