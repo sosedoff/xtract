@@ -11,6 +11,7 @@ Usage of ./xtract:
   -f="": Extraction format: (ipv4, email)
   -ignore="": List of ignore values
   -uniq=false: Return only unique matches
+  -v=false: Print version
 ```
 
 Examples:

@@ -9,6 +9,8 @@ import (
 	"strings"
 )
 
+const VERSION = "0.1.0"
+
 var (
 	ipv4  = regexp.MustCompile(`\s?([\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3})\s?`)
 	email = regexp.MustCompile(`(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})`)
@@ -51,10 +53,18 @@ func scan(regex *regexp.Regexp, data []byte) {
 }
 
 func init() {
+	var version bool
+
 	flag.StringVar(&opts.format, "f", "", "Extraction format: (ipv4, email)")
 	flag.StringVar(&opts.ignore, "ignore", "", "List of ignore values")
 	flag.BoolVar(&opts.unique, "uniq", false, "Return only unique matches")
+	flag.BoolVar(&version, "v", false, "Print version")
 	flag.Parse()
+
+	if version {
+		fmt.Printf("xtract v%s\n", VERSION)
+		os.Exit(0)
+	}
 
 	if opts.format == "" {
 		flag.Usage()
