@@ -26,6 +26,20 @@ cat mylog.log | xtract -f email -uniq -ignore email@example.com
 ssh user@host.com cat /var/log/mylog.log | xtract -f ipv4 -uniq -ignore 127.0.0.1
 ```
 
+## Install
+
+Get it:
+
+```
+go get github.com/sosedoff/xtract
+```
+
+Build from source:
+
+```
+go build
+```
+
 ## License
 
 MIT
